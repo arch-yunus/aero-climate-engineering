@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# C++ and Compiled Libraries
+*.so
+*.o
+*.obj
+*.exe
+*.bin
+*.out
+build/
+bin/
+
+# Environment
+.env
+venv/
+env/
+.venv/
+
+# IDEs
+.vscode/
+.idea/
+
+# Hardware and IoT
+*.log
+*.tmp
+HardwareDesignFiles-OLD/
+
+# Monitoring
+.prometheus/
+.grafana/
