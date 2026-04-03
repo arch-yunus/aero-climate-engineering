@@ -2,15 +2,14 @@
 
 This directory contains the operational dashboards and observability configurations for the **Aero-Climate Engineering** project.
 
-## Observability
+## Components & Files
 
-### 1. Prometheus
-- **Metrics**: Flight telemetry, sensor data, model inference latency.
-- **Scrape Jobs**: Data ingestion from edge devices.
+### 1. [`docker-compose.yml`](./docker-compose.yml)
+- **Services**: Prometheus, Grafana, InfluxDB.
+- **Orchestration**: Single-command deployment for the entire monitoring stack.
 
-### 2. Grafana
-- **Dashboards**: Real-time atmospheric profile and seeding effectiveness analysis.
-- **Alerting**: System health and safety limit breach notifications.
+### 2. [`prometheus.yml`](./prometheus.yml)
+- **Scrape Jobs**: Pre-configured targets for telemetry and Edge AI vision modules.
 
 ## Stack
 - **Ingress**: NGINX / Cloudflare Warp.

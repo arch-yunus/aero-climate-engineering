@@ -1,0 +1,29 @@
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: aero-prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: aero-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=aero_climate_2026
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+  influxdb:
+    image: influxdb:latest
+    container_name: aero-influxdb
+    ports:
+      - "8086:8086"
+    environment:
+      - INFLUXDB_DB=aero_telemetry
+    restart: unless-stopped

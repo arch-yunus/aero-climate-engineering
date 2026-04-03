@@ -2,14 +2,12 @@
 
 This directory contains the telecommunication and data handling protocols for the **Aero-Climate Engineering** project.
 
-## Protocols
+## Components & Files
 
-### 1. Meteorological Telemetry
-- **Sensors**: Pressure, Humidity, Temperature, Wind Vane.
-- **Data Transfer**: Low-bandwidth, high-reliability RF link.
-
-### 2. Command & Control (C2)
-- **Functions**: Real-time flight telemetry and seeding command execution.
+### 1. [`protocols/mqtt_reporter.py`](./protocols/mqtt_reporter.py)
+- **Protocol**: MQTT.
+- **Function**: Robust ground-to-air telemetry and command uplink/downlink.
+- **Security**: Supports TLS/SSL for secure atmospheric operations.
 
 ## Hardware Support
 - **Comms**: LoRaWAN (Long Range Wide Area Network) / Sub-GHz RF.

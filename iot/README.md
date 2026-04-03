@@ -2,15 +2,12 @@
 
 This directory contains the sensor network architecture for the **Aero-Climate Engineering** project.
 
-## Sensor Network
+## Components & Files
 
-### 1. Ground Sensors
-- **Weather Stations**: Localized environmental data for seeding validation.
-- **Connectivity**: WiFi / LoRa.
-
-### 2. Airborne Sensors
-- **In-flight Metering**: Real-time atmospheric profile collection.
-- **Data Format**: JSON/Protobuf for minimal overhead.
+### 1. [`sensor_node/sensor_node.py`](./sensor_node/sensor_node.py)
+- **Framework**: MicroPython.
+- **Function**: Atmospheric profile collection (Temperature, Humidity, Pressure).
+- **Target**: ESP32 / ESP8266.
 
 ## Hardware Support
 - **Microcontrollers**: ESP32 / Arduino / STM32.
