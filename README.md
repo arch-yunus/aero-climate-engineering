@@ -22,6 +22,30 @@ Bu proje, **Otonom İHA'lar**, **Uçta Yapay Zeka (Edge AI)** ve **Dağıtık Io
 
 ---
 
+## 🌍 İklim Mühendisliğine Derin Bakış (Deep Dive into Climate Engineering)
+
+**İklim Mühendisliği** (veya Jeo-mühendislik), Dünya'nın iklim sistemine kasıtlı ve geniş ölçekli müdahaleler yaparak küresel ısınmanın etkilerini azaltmayı veya meteorolojik olayları optimize etmeyi amaçlayan bir disiplindir. Aero-Climate projesi, bu devasa mühendislik sahasının **Atmosferik Müdahale** kolunda yer almaktadır.
+
+İklim mühendisliği üç temel sütun üzerine inşa edilmiştir:
+
+### 1. Güneş Radyasyonu Yönetimi (SRM - Solar Radiation Management)
+Güneş ışığının bir kısmını uzaya geri yansıtarak gezegeni soğutmayı hedefler.
+*   **Stratosferik Aerosol Enjeksiyonu (SAI):** Üst atmosfere yansıtıcı partiküller (sülfat vb.) bırakarak volkanik patlamaların soğutucu etkisini taklit eder.
+*   **Deniz Bulutu Beyazlatma (MCB):** Okyanus üzerindeki bulutlara tuz zerrecikleri püskürterek bulutların yansıtıcılığını (albedo) artırır.
+
+### 2. Karbon Dioksit Yakalama (CDR - Carbon Dioxide Removal)
+Atmosferdeki fazla CO2'yi doğrudan çekip depolama teknolojilerini kapsar (DAC, ağaçlandırma, okyanus gübreleme).
+
+### 3. Yağış ve Hidro-Optimizasyon (Bizim Odak Noktamız)
+Atmosferdeki nem dengesini yöneterek su döngüsünü mekanik ve dijital olarak optimize eder.
+*   **Hassas Bulut Tohumlama:** Aero-Climate, statik bir müdahale yerine **Edge AI** ile "nokta atışı" yaparak yağış verimini %20-%30 oranında artırabilen dinamik bir sistem sunar.
+*   **Albedo Yönetimi:** Bölgesel bulut yoğunluğunu kontrol ederek yerel sıcaklıkları dengeler.
+
+> [!IMPORTANT]
+> İklim mühendisliği, küresel ısınmaya karşı bir "acil durum freni" niteliğindedir. Bu projenin amacı, bu teknolojiyi demokratikleştirerek açık kaynaklı, izlenebilir ve etik bir altyapı sağlamaktır.
+
+---
+
 ## 🏗️ Teknolojik Katmanlar ve Ekosistem
 
 Proje, birbirine bağlı 4 derin katman üzerine inşa edilmiştir:
