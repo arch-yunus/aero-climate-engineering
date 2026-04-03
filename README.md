@@ -82,4 +82,14 @@ Bulut tohumlama, bulutlardaki su damlacıklarının kristalleşmesini tetikleme 
 - [ ] **Q2 2027:** İlk geniş ölçekli otonom saha testleri ve veri yayını.
 
 ---
+
+## 📚 Teknik Derin İncelemeler (Technical Deep Dives)
+
+Bu projenin arkasındaki mühendislik ve bilimsel detayları daha derinden incelemek isterseniz, aşağıdaki teknik beyaz kitaplarımıza göz atabilirsiniz:
+
+*   **[İklim Mühendisliği ve Bulut Mikro-Fiziği](./docs/Deep_Dive_Atmospheric_Physics.md)**: WBF süreci, buz çekirdeklenmesi ve AgI kinetiği üzerine akademik bir bakış.
+*   **[Otonom İHA Mühendisliği ve Kontrol Kuramı](./docs/Deep_Dive_UAV_Engineering.md)**: Türbülans altındaki EKF (Kalman Filtreleri), anti-icing sistemleri ve sürü algoritmaları.
+*   **[Uçta Yapay Zeka ve Bilgisayarlı Görü](./docs/Deep_Dive_Edge_AI.md)**: Model kuantizasyonu, morfolojik bulut analizi ve olasılıksal tetikleme mantığı.
+
+---
 *Bu proje, otonom sistemler ve ileri teknoloji optimizasyonları üzerine çalışan **Meta-Engineering Research Lab** bünyesinde açık kaynak topluluğu için başlatılmıştır.*
