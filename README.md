@@ -14,55 +14,72 @@
 
 ---
 
-## 🌩️ Proje Hakkında
+## 🌩️ Vizyon: Bulutları Dijitalleştirmek (Digitizing the Clouds)
 
-**Aero-Climate Engineering**, atmosferik olaylara müdahale süreçlerini (özellikle bulut tohumlama ve yapay yağış) modernize etmeyi amaçlayan bir araştırma ve geliştirme projesidir. Geleneksel ve maliyetli yöntemler yerine; otonom insansız hava araçları (İHA), düşük gecikmeli Edge AI modelleri ve dağıtık IoT sensör ağları kullanarak süreci optimize etmeyi hedefler.
+**Aero-Climate Engineering**, iklim değişikliği ile mücadelede pasif değil, aktif bir rol üstlenmek amacıyla başlatılmıştır. Su kıtlığı ve düzensiz yağış rejimleri, küresel gıdaya erişim ve ekosistem sürdürülebilirliği üzerinde kritik tehditler oluşturmaktadır. Geleneksel bulut tohumlama yöntemleri; yüksek maliyetli insanlı uçuşlar, düşük hedefleme hassasiyeti ve gerçek zamanlı veri eksikliği nedeniyle verimlilikten uzaktır.
 
-Bu depo, donanım spesifikasyonlarından makine öğrenmesi modellerine kadar tüm sistem mimarisini açık kaynaklı olarak belgelendirmektedir.
-
-## 🏗️ Sistem Mimarisi ve Dizin Yapısı
-
-Proje, 4 temel teknoloji katmanına ayrılmıştır:
-
-### 1. [`hardware/`](./hardware/) - Otonom Sistemler ve Faydalı Yük
-Bulut içi zorlu koşullara dayanıklı donanım tasarımları.
-* **Tohumlama Kapsülleri:** Gümüş iyodür veya sıvı propan salınımı için mikrodenetleyici kontrollü valf sistemleri.
-* **İHA İtki ve Kontrol:** Rüzgar direnci yüksek, otonom rota takibi yapabilen dron mimarileri.
-
-### 2. [`edge-ai/`](./edge-ai/) - Uçta Yapay Zeka (Edge AI)
-Havadaki araçların yer istasyonuna bağımlı kalmadan anlık karar almasını sağlayan optimize edilmiş modeller.
-* **Model Optimizasyonu:** Düşük donanımlı cihazlarda (SBC) çalışabilmesi için budanmış (pruning) ve kuantize edilmiş bulut sınıflandırma ve yoğunluk analiz modelleri.
-* **Hedefleme Algoritmaları:** Sensör verilerini işleyerek tohumlama için en optimum noktayı hesaplayan sistemler.
-
-### 3. [`telemetry/`](./telemetry/) & [`iot/`](./iot/) - Haberleşme ve Sensör Ağları
-* **Meteorolojik Telemetri:** Basınç, nem, sıcaklık ve rüzgar vektörlerini toplayan modüller.
-* **Haberleşme Protokolleri:** Düşük bant genişliğinde kesintisiz veri aktarımı sağlayan RF ve sinyalizasyon mimarileri.
-
-### 4. [`monitoring/`](./monitoring/) - Sistem İzleme
-* **Komuta Merkezi:** Uçuş telemetrisi ve hava durumu verilerini canlı izlemek için Prometheus ve Grafana tabanlı dashboard konfigürasyonları.
+Bu proje, **Otonom İHA'lar**, **Uçta Yapay Zeka (Edge AI)** ve **Dağıtık IoT Sensör Ağları**'nı bir araya getirerek atmosferik müdahaleyi bir "hassas tarım" disiplinine dönüştürmeyi hedefler. Amacımız; doğru zamanda, doğru buluta, doğru miktarda tohumlama ajanı bırakarak yağış verimini maksimize etmektir.
 
 ---
 
-## 🛠️ Kurulum ve Kullanım
+## 🏗️ Teknolojik Katmanlar ve Ekosistem
 
-Sistemin yazılım bileşenlerini ve simülasyon araçlarını yerel ortamınızda test etmek için:
+Proje, birbirine bağlı 4 derin katman üzerine inşa edilmiştir:
 
-```bash
-# Repoyu klonlayın
-git clone https://github.com/arch-yunus/aero-climate-engineering.git
-cd aero-climate-engineering
+### 1. [`hardware/`](./hardware/) - Otonom Sistemler ve Fiziksel Müdahale
+Atmosferik müdahalenin "kasları".
+- **İHA Mimarisi:** Yüksek irtifa rüzgarlarına ve cumulus bulutu içindeki türbülansa dayanıklı, karbon fiber ağır yük platformları.
+- **Tohumlama Payloadu:** Gümüş İyodür (AgI) veya Higroskopik Tuzlar için servo-kontrollü, hassas salınım yapan kapsül sistemleri ([bkz: `payload_control/`](./hardware/payload_control/)).
 
-# Gerekli bağımlılıkları kurun (Örnek Python ortamı)
-pip install -r requirements.txt
-```
+### 2. [`edge-ai/`](./edge-ai/) - Atmosferik Zeka (The Brain)
+Bulutun içinde, milisaniyeler bazında karar veren yapay zeka.
+- **Cloud-Vision (TFLite):** Drone üzerindeki kameradan gelen görüntüyü saniyede 30+ kare hızında işleyerek bulut türünü, yoğunluğunu ve tohumlama potansiyelini analiz eder.
+- **Otonom Hedefleme:** Sensör füzyonu ile rüzgar vektörlerini hesaplayıp ajanın salınacağı en optimum koordinatı belirler.
 
-## ⚖️ Hukuk ve Etik (Geoengineering Ethics)
+### 3. [`telemetry/`](./telemetry/) & [`iot/`](./iot/) - Veri Ağı (The Nervous System)
+Yer ve gök arasındaki kesintisiz iletişim.
+- **Dağıtık Sensörler:** Toprak neminden bulut içi neme kadar her şeyi ölçen LoRaWAN tabanlı düğümler.
+- **MQTT Telemetri:** Her dronun uçuş telemetrisini ve atmosferik profilini komuta merkezine eş zamanlı iletir.
 
-İklim mühendisliği teknolojileri, sınır ötesi su kaynakları ve ekolojik dengeler üzerinde doğrudan etkiye sahiptir. Bu repoda geliştirilen teknolojiler, **Uluslararası Hava Hukuku** ve sürdürülebilirlik ilkeleri gözetilerek, yalnızca akademik araştırma ve kuraklıkla mücadele optimizasyonu amacıyla tasarlanmaktadır.
+### 4. [`monitoring/`](./monitoring/) - Operasyonel İzleme (The Command Center)
+Veriyi operasyonel karara dönüştüren merkez.
+- **[Prometheus & Grafana](./monitoring/):** Tüm sistem sağlığını, tohumlama başarısını ve atmosferik değişimleri canlı olarak görselleştirir.
 
-## 🤝 Katkıda Bulunma
+---
 
-Sistem mimarisi, makine öğrenmesi modelleri veya elektronik donanım tasarımı konularında katkı sağlamak isterseniz `CONTRIBUTING.md` dosyasını inceleyebilirsiniz. Pull Request'ler (PR) her zaman açıktır.
+## ⚙️ Operasyonel İş Akışı (Operational Life-Cycle)
+
+1.  **Keşif:** Meteorolojik modeller ve yer sensörleri tohumlamaya uygun bulut oluşumlarını belirler.
+2.  **Konuşlanma:** Otonom İHA filosu hedef bölgeye sevk edilir.
+3.  **Uçta Analiz:** İHA, **Edge AI** ile bulutun iç sıcaklığını ve nemini ölçerek tohumlama için "Sweet Spot" (En Optimum Nokta) tespiti yapar.
+4.  **Müdahale:** Hassas salınım sistemi, tohumlama ajanını (AgI) bulutun yükselen hava akımına bırakır.
+5.  **Doğrulama:** Yer istasyonları ve radar verileri ile yağışın başarısı ölçülür ve yapay zeka modeli "Closed-Loop" (Kapalı Döngü) şeklinde kendini eğitir.
+
+---
+
+## 🔬 Bilimsel İnceleme: Bulut Tohumlama Nedir? (The Physics)
+
+Bulut tohumlama, bulutlardaki su damlacıklarının kristalleşmesini tetikleme sürecidir.
+*   **Soğuk Bulut Tohumlama (AgI):** Gümüş İyodür kristalleri, buz kristallerine benzer bir yapıya sahiptir. Süper soğumuş su damlacıkları bu kristallerin etrafında toplanarak donar ve ağırlaşarak yağış olarak düşer.
+*   **Higroskopik Tohumlama (Sıvı/Tuz):** Sıcak bulutlarda, suyu kendine çeken tuz kristalleri püskürtülerek damlacıkların birbirine çarpıp büyümesi (coalescence) tetiklenir.
+
+---
+
+## ⚖️ Etik ve Jeo-mühendislik (Geo-Ethics)
+
+"Bulutu çalmak su savaşlarına yol açar mı?" Aero-Climate Engineering bu soruyu ciddiye alır.
+- **Sürdürülebilirlik:** Müdahaleler ekolojik dengeyi bozmayacak miktarda ve şeffaf bir şekilde yapılmalıdır.
+- **Şeffaflık:** Tüm operasyonlar açık kaynaklı veri ağları üzerinden izlenebilir olmalıdır.
+- **Uluslararası Hukuk:** Sınır aşan su kaynakları ve hava sahası egemenliği ilkeleri, projenin etik manifestosunun temelidir.
+
+---
+
+## 🗺️ Gelecek Yol Haritası (Roadmap 2026-2027)
+
+- [ ] **Q3 2026:** Edge AI bulut sınıflandırma doğruluğunun %95 üzerine çıkarılması.
+- [ ] **Q4 2026:** Multi-UAV Swarm (Sürü İHA) ile koordineli tohumlama algoritmaları.
+- [ ] **Q1 2027:** Mobil yer istasyonu konteyner mimarisinin tamamlanması.
+- [ ] **Q2 2027:** İlk geniş ölçekli otonom saha testleri ve veri yayını.
 
 ---
 *Bu proje, otonom sistemler ve ileri teknoloji optimizasyonları üzerine çalışan **Meta-Engineering Research Lab** bünyesinde açık kaynak topluluğu için başlatılmıştır.*
